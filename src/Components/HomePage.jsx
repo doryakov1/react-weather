@@ -7,29 +7,29 @@ export default function HomePage(props) {
                 return <div className='current-weather'>
                     <div className='city-weather'>
                         <span>{props.city}</span>
-                        <span>{Math.round(props.currentWeather[0].Temperature.Metric.Value)}C</span>
+                        <span>{props.currentWeather[0].Temperature.Metric.Value}C</span>
                     </div>
                     <h2>{props.currentWeather[0].WeatherText}</h2>
                     <div className='forecast'>
                         <div>
                             <span>Sun</span>
-                            <span>{Math.round(props.foreCast.DailyForecasts[0].Temperature.Maximum.Value)}C</span>
+                            <span>{props.foreCast.DailyForecasts[0].Temperature.Maximum.Value}C</span>
                         </div>
                         <div>
                             <span>Mon</span>
-                            <span>{Math.round(props.foreCast.DailyForecasts[1].Temperature.Maximum.Value)}C</span>
+                            <span>{props.foreCast.DailyForecasts[1].Temperature.Maximum.Value}C</span>
                         </div>
                         <div>
                             <span>Tue</span>
-                            <span>{Math.round(props.foreCast.DailyForecasts[2].Temperature.Maximum.Value)}C</span>
+                            <span>{props.foreCast.DailyForecasts[2].Temperature.Maximum.Value}C</span>
                         </div>
                         <div>
                             <span>Wed</span>
-                            <span>{Math.round(props.foreCast.DailyForecasts[3].Temperature.Maximum.Value)}C</span>
+                            <span>{props.foreCast.DailyForecasts[3].Temperature.Maximum.Value}C</span>
                         </div>
                         <div>
                             <span>Thu</span>
-                            <span>{Math.round(props.foreCast.DailyForecasts[4].Temperature.Maximum.Value)}C</span>
+                            <span>{props.foreCast.DailyForecasts[4].Temperature.Maximum.Value}C</span>
                         </div>
                     </div>
                 </div>
