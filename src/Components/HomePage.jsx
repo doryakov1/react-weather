@@ -42,7 +42,7 @@ export default function HomePage(props) {
 
     return (
         <div className='weather'>
-            <input onChange={e => props.onSearch(e.target.value)} type="text" placeholder='City' />
+            <input onChange={e => props.onSearch(e.target.value)} type="search" placeholder='City' />
             <div>
                 <button onClick={props.search}>Search</button>
                 <button onClick={props.addToFavorit}>Add to favorit</button>

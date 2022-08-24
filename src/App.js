@@ -12,10 +12,10 @@ function App() {
   const [foreCast, setForeCast] = useState()
   const [favorits, setFavorits] = useState([])
   useEffect(() => {
-    fetch(`http://dataservice.accuweather.com/currentconditions/v1/215854?apikey=b835z8UJOsJkVWMeR84YdiFanjFbsn1h`)
+    fetch(`https://dataservice.accuweather.com/currentconditions/v1/215854?apikey=b835z8UJOsJkVWMeR84YdiFanjFbsn1h`)
       .then(res => { return res.json() })
       .then(data => { setCurrentWeather(data) })
-    fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/215854?apikey=b835z8UJOsJkVWMeR84YdiFanjFbsn1h&metric=true`)
+    fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/215854?apikey=b835z8UJOsJkVWMeR84YdiFanjFbsn1h&metric=true`)
       .then(res => { return res.json() })
       .then(data => { setForeCast(data) })
   }, [flag]);
@@ -28,10 +28,10 @@ function App() {
 
   const search = () => {
     setCity(autoComplete[0].LocalizedName)
-    fetch(`http://dataservice.accuweather.com/currentconditions/v1/${autoComplete[0].Key}?apikey=b835z8UJOsJkVWMeR84YdiFanjFbsn1h`)
+    fetch(`https://dataservice.accuweather.com/currentconditions/v1/${autoComplete[0].Key}?apikey=b835z8UJOsJkVWMeR84YdiFanjFbsn1h`)
       .then(res => { return res.json() })
       .then(data => { setCurrentWeather(data) })
-    fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${autoComplete[0].Key}?apikey=b835z8UJOsJkVWMeR84YdiFanjFbsn1h&metric=true`)
+    fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${autoComplete[0].Key}?apikey=b835z8UJOsJkVWMeR84YdiFanjFbsn1h&metric=true`)
       .then(res => { return res.json() })
       .then(data => { setForeCast(data) })
   }
@@ -39,10 +39,10 @@ function App() {
 
   const searchF = (name,key) => {
     setCity(name)
-    fetch(`http://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=b835z8UJOsJkVWMeR84YdiFanjFbsn1h`)
+    fetch(`https://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=b835z8UJOsJkVWMeR84YdiFanjFbsn1h`)
       .then(res => { return res.json() })
       .then(data => { setCurrentWeather(data) })
-    fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}?apikey=b835z8UJOsJkVWMeR84YdiFanjFbsn1h&metric=true`)
+    fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}?apikey=b835z8UJOsJkVWMeR84YdiFanjFbsn1h&metric=true`)
       .then(res => { return res.json() })
       .then(data => { setForeCast(data) })
   }
