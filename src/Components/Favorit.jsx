@@ -6,7 +6,7 @@ export default function Favorit(props) {
   const nav = useNavigate()
   const onSearch = (city , id) => {
     props.searchF(city , id)
-    nav('/')
+    nav('/react-weather')
   }
   return (
     <div className='favorit'>
