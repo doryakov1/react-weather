@@ -7,29 +7,29 @@ export default function HomePage(props) {
                 return <div className='current-weather'>
                     <div className='city-weather'>
                         <span>{props.city}</span>
-                        <span>{props.currentWeather[0].Temperature.Metric.Value}C</span>
+                        <span>{Math.round(props.currentWeather[0].Temperature.Metric.Value)}C</span>
                     </div>
                     <h2>{props.currentWeather[0].WeatherText}</h2>
                     <div className='forecast'>
                         <div>
                             <span>Sun</span>
-                            <span>{props.foreCast.DailyForecasts[0].Temperature.Maximum.Value}C</span>
+                            <span>{Math.round(props.foreCast.DailyForecasts[0].Temperature.Maximum.Value)}C</span>
                         </div>
                         <div>
                             <span>Mon</span>
-                            <span>{props.foreCast.DailyForecasts[1].Temperature.Maximum.Value}C</span>
+                            <span>{Math.round(props.foreCast.DailyForecasts[1].Temperature.Maximum.Value)}C</span>
                         </div>
                         <div>
                             <span>Tue</span>
-                            <span>{props.foreCast.DailyForecasts[2].Temperature.Maximum.Value}C</span>
+                            <span>{Math.round(props.foreCast.DailyForecasts[2].Temperature.Maximum.Value)}C</span>
                         </div>
                         <div>
                             <span>Wed</span>
-                            <span>{props.foreCast.DailyForecasts[3].Temperature.Maximum.Value}C</span>
+                            <span>{Math.round(props.foreCast.DailyForecasts[3].Temperature.Maximum.Value)}C</span>
                         </div>
                         <div>
                             <span>Thu</span>
-                            <span>{props.foreCast.DailyForecasts[4].Temperature.Maximum.Value}C</span>
+                            <span>{Math.round(props.foreCast.DailyForecasts[4].Temperature.Maximum.Value)}C</span>
                         </div>
                     </div>
                 </div>
@@ -38,16 +38,35 @@ export default function HomePage(props) {
             return <span>City could not found!</span>
         }
     }
+    const displayCities = () => {
+     try {
+        if(props.autoComplete != null || props.autoComplete != undefined){
+            return  props.autoComplete.map((city) => {
+                return <div className='cities'>
+                    <button className='city' onClick={() => props.searchF(city.LocalizedName, city.Key)}>{city.LocalizedName}</button>
+                </div>
+            })
+        }
+     } catch (error) {
+        
+     } 
+
+
+    }
 
 
     return (
         <div className='weather'>
+               <div>
             <input onChange={e => props.onSearch(e.target.value)} type="search" placeholder='City' />
-            <div>
-                <button onClick={props.search}>Search</button>
-                <button onClick={props.addToFavorit}>Add to favorit</button>
+            <button onClick={props.addToFavorit}>Add to favorit</button>
+            </div>
+                {/* <button onClick={props.search}>Search</button> */}
+            <div className='display-cities'>
+                {displayCities()}
             </div>
             {getWeather()}
+
         </div>
     )
 }

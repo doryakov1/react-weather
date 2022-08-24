@@ -7,31 +7,31 @@ import Favorit from './Components/Favorit';
 function App() {
   const [flag, setFlag] = useState(true);
   const [currentWeather, setCurrentWeather] = useState()
-  const [autoComplete, setAutoComplete] = useState()
+  const [autoComplete, setAutoComplete] = useState([])
   const [city, setCity] = useState('Tel Aviv')
   const [foreCast, setForeCast] = useState()
   const [favorits, setFavorits] = useState([])
   useEffect(() => {
-    fetch(`https://dataservice.accuweather.com/currentconditions/v1/215854?apikey=HjjoM1yxPNRiH8yryFYyQfdJ4Jr7llJO`)
+    fetch(`https://dataservice.accuweather.com/currentconditions/v1/215854?apikey=XYToGtAMpiwHnNK43KgFhhfSaZXjbi4B`)
       .then(res => { return res.json() })
       .then(data => { setCurrentWeather(data) })
-    fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/215854?apikey=HjjoM1yxPNRiH8yryFYyQfdJ4Jr7llJO&metric=true`)
+    fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/215854?apikey=XYToGtAMpiwHnNK43KgFhhfSaZXjbi4B&metric=true`)
       .then(res => { return res.json() })
       .then(data => { setForeCast(data) })
   }, [flag]);
 
   const onSearch = (city) => {
-    fetch(`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=HjjoM1yxPNRiH8yryFYyQfdJ4Jr7llJO&q=${city}`)
+    fetch(`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=XYToGtAMpiwHnNK43KgFhhfSaZXjbi4B&q=${city}`)
       .then(res => { return res.json() })
       .then(data => { setAutoComplete(data) })
   }
 
   const search = () => {
     setCity(autoComplete[0].LocalizedName)
-    fetch(`https://dataservice.accuweather.com/currentconditions/v1/${autoComplete[0].Key}?apikey=HjjoM1yxPNRiH8yryFYyQfdJ4Jr7llJO`)
+    fetch(`https://dataservice.accuweather.com/currentconditions/v1/${autoComplete[0].Key}?apikey=XYToGtAMpiwHnNK43KgFhhfSaZXjbi4B`)
       .then(res => { return res.json() })
       .then(data => { setCurrentWeather(data) })
-    fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${autoComplete[0].Key}?apikey=HjjoM1yxPNRiH8yryFYyQfdJ4Jr7llJO&metric=true`)
+    fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${autoComplete[0].Key}?apikey=XYToGtAMpiwHnNK43KgFhhfSaZXjbi4B&metric=true`)
       .then(res => { return res.json() })
       .then(data => { setForeCast(data) })
   }
@@ -39,16 +39,16 @@ function App() {
 
   const searchF = (name,key) => {
     setCity(name)
-    fetch(`https://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=HjjoM1yxPNRiH8yryFYyQfdJ4Jr7llJO`)
+    fetch(`https://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=XYToGtAMpiwHnNK43KgFhhfSaZXjbi4B`)
       .then(res => { return res.json() })
       .then(data => { setCurrentWeather(data) })
-    fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}?apikey=HjjoM1yxPNRiH8yryFYyQfdJ4Jr7llJO&metric=true`)
+    fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}?apikey=XYToGtAMpiwHnNK43KgFhhfSaZXjbi4B&metric=true`)
       .then(res => { return res.json() })
       .then(data => { setForeCast(data) })
   }
   const addToFavorit = () => {
     let cityObj = {
-      temp: currentWeather[0].Temperature.Metric.Value + 'C',
+      temp: currentWeather[0].Temperature.Metric.Value,
       name: city,
       id: autoComplete[0].Key
     }
@@ -65,7 +65,7 @@ function App() {
         {console.log(currentWeather)}
         <Header />
         <Routes>
-          <Route path='/react-weather' element={<HomePage addToFavorit={addToFavorit} foreCast={foreCast} city={city} search={search} onSearch={onSearch} currentWeather={currentWeather} />} />
+          <Route path='/react-weather' element={<HomePage addToFavorit={addToFavorit} foreCast={foreCast} searchF={searchF} city={city} search={search} onSearch={onSearch} currentWeather={currentWeather} autoComplete={autoComplete}/>} />
           <Route path='/react-weather/favorit' element={<Favorit favorits={favorits} searchF={searchF} onSearch={onSearch} />} />
         </Routes>
       </BrowserRouter>
