@@ -1,0 +1,55 @@
+.favorit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+    flex-wrap: wrap;
+}
+
+.favorits{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid steelblue;
+    background: lightgray;
+}
+
+
+.favorits:hover{
+    transition: 1.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    background: steelblue;
+}
+
+.favorit button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 150px;
+    height: 100px;
+    background: none;
+    border: none;
+    font-size: large;
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+ 
+
+.favorit span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

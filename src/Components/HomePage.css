@@ -1,0 +1,63 @@
+.weather {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.current-weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.current-weather .city-weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    width: 80%;
+    margin: 10px;
+}
+
+.current-weather .forecast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+    flex-wrap: wrap;
+}
+
+.current-weather .forecast div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid steelblue;
+    color: black;
+    background: lightgray;
+    margin: 5px;
+    padding: 5px;
+    width: 60px;
+    height: 60px;
+}
+
+.weather input {
+    margin: 5px;
+    padding: 5px;
+    height: 20px;
+    border: 1px solid green;
+    width: 40%;
+}
+
+.weather button {
+ background: steelblue;
+ margin: 5px;
+ padding: 5px;
+ width: 120px;
+ cursor: pointer;
+}
