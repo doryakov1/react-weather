@@ -2,8 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import './HomePage.css'
 export default function HomePage(props) {
-    const [city,setCity] = useState('')
-    const [key ,setKey] = useState('')
+    const [city,setCity] = useState('Tel Aviv')
+    const [key ,setKey] = useState('215854')
     const searchCity = (city,key)=>{
         props.searchF(city, key)
         setCity(city) 
