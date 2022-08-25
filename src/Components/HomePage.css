@@ -46,7 +46,7 @@
     height: 75px;
 }
 
-.weather .switch-button {
+.weather .switch-input {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

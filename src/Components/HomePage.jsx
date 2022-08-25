@@ -76,7 +76,7 @@ const isNameEquel = (element) => element.name == props.city;
 
     return (
         <div className='weather'>
-               <div className='switch-button'>
+               <div className='switch-input'>
             <input onChange={e => props.onSearch(e.target.value)} type="search" placeholder='City' />
             {switchButton()}
             </div>
