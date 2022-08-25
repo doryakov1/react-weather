@@ -32,7 +32,7 @@
     flex-wrap: wrap;
 }
 
-.current-weather .forecast div{
+.current-weather .forecast div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,33 +42,48 @@
     background: lightgray;
     margin: 5px;
     padding: 5px;
-    width: 60px;
-    height: 60px;
+    width: 75px;
+    height: 75px;
+}
+
+.weather .switch-button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .weather input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 5px;
     padding: 5px;
     height: 20px;
     border: 1px solid green;
-    width: 185px;
+    width: calc(225px + 2vmin);
     height: 30px;
 }
 
 .weather button {
- background: steelblue;
- margin: 5px;
- padding: 5px;
- width: 120px;
- cursor: pointer;
-}
-
-.weather .cities{
+    background: steelblue;
+    margin: 5px;
+    padding: 5px;
+    width: calc(150px + 2vmin);
+    cursor: pointer;
     display: flex;
-     position: relative;
+    justify-content: center;
+    align-items: center;
 }
 
-.weather .city{
+
+.weather .cities {
+    display: flex;
+    position: relative;
+}
+
+.weather .city {
     display: flex;
     background: none;
 }
