@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <div className='header'>
         <Link className='link' to='/react-weather'>Home</Link>
-        <Link className='link' to='/react-weather/favorit'>Favorit</Link>
+        <Link className='link' to='/react-weather/favorit'>Favorites</Link>
     </div>
   )
 }

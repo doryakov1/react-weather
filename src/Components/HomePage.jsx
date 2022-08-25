@@ -67,16 +67,16 @@ export default function HomePage(props) {
 const isNameEquel = (element) => element.name == props.city;
 
         if (props.favorits.findIndex(isNameEquel) == -1) {
-          return <button onClick={()=>props.addToFavorit(city , key)}>Add to favorit</button>
+          return <button onClick={()=>props.addToFavorit(city , key)}>Add to Favorites</button>
           }else{
-            return <button onClick={()=>props.deleteFromFavorit(props.favorits.findIndex(isNameEquel))}>Delete from favorit</button>
+            return <button onClick={()=>props.deleteFromFavorit(props.favorits.findIndex(isNameEquel))}>Delete from Favorites</button>
           }
     }
 
 
     return (
         <div className='weather'>
-               <div>
+               <div className='switch-button'>
             <input onChange={e => props.onSearch(e.target.value)} type="search" placeholder='City' />
             {switchButton()}
             </div>

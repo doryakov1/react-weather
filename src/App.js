@@ -12,16 +12,16 @@ function App() {
   const [foreCast, setForeCast] = useState()
   const [favorits, setFavorits] = useState([])
   useEffect(() => {
-    fetch(`https://dataservice.accuweather.com/currentconditions/v1/215854?apikey=LD7qkq6oCxAL0P7Su2mzYry0mPs1RMAJ`)
+    fetch(`https://dataservice.accuweather.com/currentconditions/v1/215854?apikey=Wd1ajdtjDQrQ9GQAs2cfaupkQKAYY22r`)
       .then(res => { return res.json() })
       .then(data => { setCurrentWeather(data) })
-    fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/215854?apikey=LD7qkq6oCxAL0P7Su2mzYry0mPs1RMAJ&metric=true`)
+    fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/215854?apikey=Wd1ajdtjDQrQ9GQAs2cfaupkQKAYY22r&metric=true`)
       .then(res => { return res.json() })
       .then(data => { setForeCast(data) })
   }, [flag]);
 
   const onSearch = (city) => {
-    fetch(`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=LD7qkq6oCxAL0P7Su2mzYry0mPs1RMAJ&q=${city}`)
+    fetch(`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=Wd1ajdtjDQrQ9GQAs2cfaupkQKAYY22r&q=${city}`)
       .then(res => { return res.json() })
       .then(data => { setAutoComplete(data) })
   }
@@ -30,10 +30,10 @@ function App() {
   const searchF = (name,key) => {
     setCity(name)
     setAutoComplete([])
-    fetch(`https://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=LD7qkq6oCxAL0P7Su2mzYry0mPs1RMAJ`)
+    fetch(`https://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=Wd1ajdtjDQrQ9GQAs2cfaupkQKAYY22r`)
       .then(res => { return res.json() })
       .then(data => { setCurrentWeather(data) })
-    fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}?apikey=LD7qkq6oCxAL0P7Su2mzYry0mPs1RMAJ&metric=true`)
+    fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}?apikey=Wd1ajdtjDQrQ9GQAs2cfaupkQKAYY22r&metric=true`)
       .then(res => { return res.json() })
       .then(data => { setForeCast(data) })
   }
