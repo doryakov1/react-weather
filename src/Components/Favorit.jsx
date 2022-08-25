@@ -14,7 +14,7 @@ export default function Favorit(props) {
         return <div className='favorits'>
           <button onClick={() => onSearch(city.name ,city.id)}>
             <span>{city.name}</span>
-            <span>{city.temp}C</span>
+            <span>{parseInt( city.temp)}C</span>
           </button>
         </div>
       })}
