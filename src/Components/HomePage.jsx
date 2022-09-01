@@ -25,7 +25,6 @@ export default function HomePage(props) {
     }
     const getDate =(value) =>{
      let date = new Date();
-     console.log(date.getDay()+value)
 
      if(date.getDay()+value == 1 || date.getDay()+value == 8)
      {
@@ -72,12 +71,12 @@ export default function HomePage(props) {
                     <div className='city-weather'>
                         <span>{props.city}</span>
                         <span>{parseInt(props.currentWeather[0].Temperature.Metric.Value)}°C</span>
+                        <span>{getForeCastsIcon(props.currentWeather[0].WeatherIcon,props.currentWeather[0].WeatherText)}</span>
                     </div>
                     <h2>{props.currentWeather[0].WeatherText}</h2>
                     <div className='forecast'>
                         <div>
                             <span>{getDate(+1)}</span>
-                            {console.log(props.foreCast.DailyForecasts)}
                             <span>{parseInt(props.foreCast.DailyForecasts[0].Temperature.Maximum.Value)}°C</span>
                             {getForeCastsIcon(props.foreCast.DailyForecasts[0].Day.Icon,props.foreCast.DailyForecasts[0].Day.IconPhrase)}
                         </div>
