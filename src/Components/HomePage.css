@@ -51,8 +51,8 @@
     background: lightgray;
     margin: 5px;
     padding: 5px;
-    width: calc(90px + 2vmin);
-    height: calc(90px + 2vmin);
+    width: calc(100px + 2vmin);
+    height: calc(100px + 2vmin);
 }
 
 .weather .switch-input {

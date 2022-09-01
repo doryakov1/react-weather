@@ -23,6 +23,48 @@ export default function HomePage(props) {
          return <img src={`https://developer.accuweather.com/sites/default/files/${iconNumber}-s.png`} alt={iconName} />
 
     }
+    const getDate =(value) =>{
+     let date = new Date();
+     console.log(date.getDay()+value)
+
+     if(date.getDay()+value == 1 || date.getDay()+value == 8)
+     {
+        return 'Mon'
+     }
+
+     if(date.getDay()+value == 2 || date.getDay()+value == 9)
+     {
+        return 'Tue'
+     }
+
+     if(date.getDay()+value == 3 || date.getDay()+value == 10)
+     {
+        return 'Wed'
+     }
+
+     if(date.getDay()+value == 4 || date.getDay()+value == 11)
+     {
+        return 'Thu'
+     }
+
+     if(date.getDay()+value == 5 || date.getDay()+value == 12) 
+     {
+        return 'Fri'
+     }
+
+     if(date.getDay()+value == 6 || date.getDay()+value  == 13)
+     {
+        return 'Sat'
+     }
+
+     if(date.getDay()+value == 7 || date.getDay()+value == 14)
+     {
+        return 'Sun'
+     }
+     
+    }
+
+
     const getWeather = () => {
         try {
             if (props.currentWeather[0].Temperature.Metric.Value != undefined) {
@@ -34,28 +76,28 @@ export default function HomePage(props) {
                     <h2>{props.currentWeather[0].WeatherText}</h2>
                     <div className='forecast'>
                         <div>
-                            <span>Sun</span>
+                            <span>{getDate(+1)}</span>
                             {console.log(props.foreCast.DailyForecasts)}
                             <span>{parseInt(props.foreCast.DailyForecasts[0].Temperature.Maximum.Value)}°C</span>
                             {getForeCastsIcon(props.foreCast.DailyForecasts[0].Day.Icon,props.foreCast.DailyForecasts[0].Day.IconPhrase)}
                         </div>
                         <div>
-                            <span>Mon</span>
+                            <span>{getDate(+2)}</span>
                             <span>{parseInt(props.foreCast.DailyForecasts[1].Temperature.Maximum.Value)}°C</span>
                             {getForeCastsIcon(props.foreCast.DailyForecasts[1].Day.Icon,props.foreCast.DailyForecasts[1].Day.IconPhrase)}
                         </div>
                         <div>
-                            <span>Tue</span>
+                            <span>{getDate(+3)}</span>
                             <span>{parseInt(props.foreCast.DailyForecasts[2].Temperature.Maximum.Value)}°C</span>
                             {getForeCastsIcon(props.foreCast.DailyForecasts[2].Day.Icon,props.foreCast.DailyForecasts[2].Day.IconPhrase)}
                         </div>
                         <div>
-                            <span>Wed</span>
+                            <span>{getDate(+4)}</span>
                             <span>{parseInt(props.foreCast.DailyForecasts[3].Temperature.Maximum.Value)}°C</span>
                             {getForeCastsIcon(props.foreCast.DailyForecasts[3].Day.Icon,props.foreCast.DailyForecasts[3].Day.IconPhrase)}
                         </div>
                         <div>
-                            <span>Thu</span>
+                            <span>{getDate(+5)}</span>
                             <span>{parseInt(props.foreCast.DailyForecasts[4].Temperature.Maximum.Value)}°C</span>
                             {getForeCastsIcon(props.foreCast.DailyForecasts[4].Day.Icon,props.foreCast.DailyForecasts[4].Day.IconPhrase)}
                         </div>
@@ -102,7 +144,6 @@ export default function HomePage(props) {
             </div>
             {switchButton()}
             {getWeather()}
-
         </div>
     )
 }
