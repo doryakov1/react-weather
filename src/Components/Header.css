@@ -12,13 +12,14 @@
     align-items: center;
     text-decoration: none;
     margin: 10px;
-    background: steelblue;
-    color: black;
+    background: black;
+    color: steelblue;
+    /* font-weight: bold; */
     width: 145px;
 }
 
 .header .link:hover {
    transition: 1s;
-   background: black;
-  color: steelblue;
+   background: steelblue;
+  color: black;
 }

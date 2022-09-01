@@ -5,6 +5,15 @@
     flex-direction: column;
 }
 
+.weather .switch-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: calc(100% - 180px);
+    width: calc(160px + 2vmin);
+    background: orange;
+}
+
 
 .current-weather {
     display: flex;
@@ -42,8 +51,8 @@
     background: lightgray;
     margin: 5px;
     padding: 5px;
-    width: 75px;
-    height: 75px;
+    width: 120px;
+    height: 120px;
 }
 
 .weather .switch-input {
@@ -51,21 +60,36 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    /* width: 100%; */
+    flex-direction: column;
+    box-shadow: 1px 1px 1px lightgray;
 }
 
 .weather input {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    margin: 5px;
+    background: none;
     padding: 5px;
     height: 20px;
-    border: 1px solid green;
-    width: calc(225px + 2vmin);
+    width: calc(175px + 2vmin);
     height: 30px;
+    border: none;
+
 }
 
+.weather input:hover {
+    transition: 1.3s;
+    width: calc(195px + 2vmin);
+}
+
+.weather input::placeholder{
+    color: black;
+
+}
+.weather input:{
+ 
+}
 .weather button {
     background: steelblue;
     margin: 5px;
@@ -85,5 +109,17 @@
 
 .weather .city {
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
     background: none;
+    padding: 5px;
+    height: 20px;
+    width: calc(175px + 2vmin);
+    height: 30px;
+    border: none;
+}
+
+.weather .city:hover {
+ transition: 1s;
+ background: lightgray;
 }
