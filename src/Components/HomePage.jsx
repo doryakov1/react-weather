@@ -26,6 +26,11 @@ export default function HomePage(props) {
     const getDate =(value) =>{
      let date = new Date();
 
+     if(date.getDay()+value == 0 ||date.getDay()+value == 7)
+     {
+        return 'Sun'
+     }
+
      if(date.getDay()+value == 1 || date.getDay()+value == 8)
      {
         return 'Mon'
@@ -41,25 +46,22 @@ export default function HomePage(props) {
         return 'Wed'
      }
 
-     if(date.getDay()+value == 4 || date.getDay()+value == 11)
+     if(date.getDay()+value == 4)
      {
         return 'Thu'
      }
 
-     if(date.getDay()+value == 5 || date.getDay()+value == 12) 
+     if(date.getDay()+value == 5) 
      {
         return 'Fri'
      }
 
-     if(date.getDay()+value == 6 || date.getDay()+value  == 13)
+     if(date.getDay()+value == 6)
      {
         return 'Sat'
      }
 
-     if(date.getDay()+value == 7 || date.getDay()+value == 14)
-     {
-        return 'Sun'
-     }
+     
      
     }
 
