@@ -76,27 +76,27 @@ export default function HomePage(props) {
                     <h2>{props.currentWeather[0].WeatherText}</h2>
                     <div className='forecast'>
                         <div>
-                            <span>{getDate(+1)}</span>
+                            <span>{getDate(+0)}</span>
                             <span>{parseInt(props.foreCast.DailyForecasts[0].Temperature.Maximum.Value)}°C</span>
                             {getForeCastsIcon(props.foreCast.DailyForecasts[0].Day.Icon,props.foreCast.DailyForecasts[0].Day.IconPhrase)}
                         </div>
                         <div>
-                            <span>{getDate(+2)}</span>
+                            <span>{getDate(+1)}</span>
                             <span>{parseInt(props.foreCast.DailyForecasts[1].Temperature.Maximum.Value)}°C</span>
                             {getForeCastsIcon(props.foreCast.DailyForecasts[1].Day.Icon,props.foreCast.DailyForecasts[1].Day.IconPhrase)}
                         </div>
                         <div>
-                            <span>{getDate(+3)}</span>
+                            <span>{getDate(+2)}</span>
                             <span>{parseInt(props.foreCast.DailyForecasts[2].Temperature.Maximum.Value)}°C</span>
                             {getForeCastsIcon(props.foreCast.DailyForecasts[2].Day.Icon,props.foreCast.DailyForecasts[2].Day.IconPhrase)}
                         </div>
                         <div>
-                            <span>{getDate(+4)}</span>
+                            <span>{getDate(+3)}</span>
                             <span>{parseInt(props.foreCast.DailyForecasts[3].Temperature.Maximum.Value)}°C</span>
                             {getForeCastsIcon(props.foreCast.DailyForecasts[3].Day.Icon,props.foreCast.DailyForecasts[3].Day.IconPhrase)}
                         </div>
                         <div>
-                            <span>{getDate(+5)}</span>
+                            <span>{getDate(+4)}</span>
                             <span>{parseInt(props.foreCast.DailyForecasts[4].Temperature.Maximum.Value)}°C</span>
                             {getForeCastsIcon(props.foreCast.DailyForecasts[4].Day.Icon,props.foreCast.DailyForecasts[4].Day.IconPhrase)}
                         </div>

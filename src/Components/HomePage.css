@@ -91,7 +91,7 @@
 
 }
 
-.weather input:hover {
+.weather input:focus {
     transition: 1.3s;
     width: calc(195px + 2vmin);
 }
